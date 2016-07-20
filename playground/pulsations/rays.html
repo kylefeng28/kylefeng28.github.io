@@ -1,0 +1,91 @@
+<!--
+Made by Kyle Feng. (c) 2016
+-->
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Raphaël Animation test</title>
+	<script src="jquery-2.2.3.js"></script>
+	<script src="raphael.min.js"></script>
+<style>
+body {
+	background-color: gray;
+	margin: 0px;
+}
+#container {
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+}
+</style>
+</head>
+
+<body>
+
+<div id="container">
+</div>
+
+<script>
+
+var N = 36;
+
+var centerx, centery;
+var paper;
+var circle, bars;
+
+function animateBar(bar) {
+	var x = Math.floor(Math.random() * 500);
+	changeColor(bar);
+	bar.animate({ "height": x }, 400, ">"/*cubic-bezier: */, function() { animateBar(bar); }); 
+	// TODO rotation
+}
+
+function animateCircle(circle) {
+	changeColor(circle, function() { animateCircle(circle) });
+}
+	
+function changeColor(el, callback) {
+	var color = $(el).data("color");
+	color[0] = (color[0]+20) % 255;
+	color[1] = (color[1]+20) % 255;
+	color[2] = (color[2]+20) % 255;
+
+	el.animate({ "fill": "rgb("+color+")" }, 400, ">", callback); 
+}
+
+function pulse1(circle) { circle.animate({ "r": 300 }, 400, ">", function() { pulse2(circle); }); }
+function pulse2(circle) { circle.animate({ "r": 50  }, 400, "<", function() { pulse1(circle); }); }
+
+function animate() {
+	$(bars).each(function(i) { animateBar(this); });
+	animateCircle(circle);
+	// pulse1(circle);
+}
+
+$(document).ready(function() {
+	$("#container").css({ "min-height": $(window).height() });
+
+	paper = Raphael("container");
+	centerx = paper.width / 2;
+	centery = paper.height / 2;
+
+	bars = [];
+	for (var i = 0; i < N; i++) {
+		var ang = i*360/N;
+		bars[i] = paper.rect(centerx, centery, 2, 0).attr("fill", "#000").attr("stroke", "none").transform("r"+ang);
+		$(bars[i]).data("color", [ Math.floor(Math.random() * 255), Math.floor(Math.random() * 255), Math.floor(Math.random() * 255) ]);
+		$(bars[i]).data("ang", ang);
+	}
+
+	circle = paper.circle(centerx, centery, 2).attr("fill", "#000").attr("stroke", "none");
+	$(circle).data("color", [ Math.floor(Math.random() * 255), Math.floor(Math.random() * 255), Math.floor(Math.random() * 255) ]);
+
+	animate();
+});
+
+</script>
+
+</body>
+</html>

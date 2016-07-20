@@ -1,0 +1,99 @@
+/*
+ * main.scss
+ */
+/* Golden ratio */
+/* Thanks to http://gld.chadlindemann.com/ */
+/* Breakpoints */
+/* TODO: golden ratio fonts, columns, etc */
+/* font-family: Mills Sorts Goudy? */
+/* Landing */
+.landing header {
+  margin-top: 6rem;
+  text-align: center; }
+  @media (min-width: 550px) {
+    .landing header {
+      margin-top: 18rem; } }
+
+.landing .navbar {
+  text-align: center; }
+
+footer {
+  border-top: 2px solid #eee;
+  margin: 2rem 0;
+  padding: 1rem 0;
+  text-align: center; }
+
+#canvas {
+  position: absolute;
+  display: block;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  /*pointer-events: none; /**/
+  /*z-index: -1; /**/
+  background-color: #fcfcfc; }
+
+hr {
+  height: 1px;
+  margin: 2rem 0;
+  background: #e1e1e1; }
+
+/* Navigation */
+.navbar {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee; }
+
+.navbar-list {
+  margin: 2rem 0;
+  list-style: none; }
+
+.navbar-item {
+  margin: 0 1rem;
+  display: inline-block; }
+
+.navbar h3 {
+  margin: 0; }
+
+.navbar-item a {
+  position: relative;
+  text-decoration: none;
+  color: #222; }
+
+/* Content */
+.content .title {
+  margin: 2rem 0;
+  text-align: center; }
+
+/* Link underline animation on hover */
+/* From http://tobiasahlin.com/blog/css-trick-animating-link-underlines/ */
+a {
+  text-decoration: none;
+  position: relative;
+  /* required for underline to work */ }
+
+a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.2s ease-in-out 0s; }
+
+a:hover:before {
+  visibility: visible;
+  transform: scaleX(1); }
+
+.playground-item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center; }
+
+.caption {
+  display: block; }
+
+/*# sourceMappingURL=main.css.map */

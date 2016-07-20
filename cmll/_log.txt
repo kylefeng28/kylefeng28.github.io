@@ -1,0 +1,3 @@
+2013-07-14 Started collecting CMLL algorithms
+2016-05-02 Refactored inline styles into classes
+2016-06-24 Added colors, transparency.

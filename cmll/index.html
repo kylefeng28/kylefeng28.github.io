@@ -1,0 +1,324 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+<head>
+	<meta charset="utf-8"/>
+	<title>CMLL Algorithms | kylefeng28</title>
+	<meta name="author" content="Kyle Feng"/>
+	<meta name="description" content=""/>
+	<meta name="keywords" content="speedcubing"/>
+	<meta name="generator" content="Hugo 0.16" />
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+	
+	
+	<base href="http://kylefeng28.github.io/"/>
+	<link rel="canonical" href="http://kylefeng28.github.io/cmll/"/>
+	<link href="" rel="alternate" type="application/rss+xml" title="kylefeng28"/>
+
+	
+	
+
+	
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+	
+
+	
+	<link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/skeleton.css">
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+
+<div class="container">
+<header class="header">
+	<nav class="navbar container">
+		<ul class="navbar-list">
+			<li class="navbar-item"><h3><a href="http://kylefeng28.github.io/">kylefeng28</a></h3></li>
+			
+<li class="navbar-item"><a href=/blog>Blog</a></li>
+
+<li class="navbar-item"><a href=/playground>Playground</a></li>
+
+<li class="navbar-item"><a href=/about>About</a></li>
+
+
+		</ul>
+	</nav>
+</header>
+</div>
+
+<div class="container">
+<main class="content">
+  <div class="post">
+    <h3 class="title">CMLL Algorithms</h3>
+	
+    <style>
+/* Color scheme: original
+headers: #e5e5e5
+topleft: #e0e0e0
+cell: #f0f0f0
+*/
+
+/* Color scheme: new
+#2d6288
+#a9a3e0
+#7ab9d3
+#d2daf0
+*/
+
+body { background-color: #efefef; }
+.content { font-family: "Open Sans", "Source Sans Pro", sans-serif; /* sans easier to read on screen */
+	position: relative; left: calc(-50vw + 50%); width: 100vw; } /* fill whole screen width */
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+.top { vertical-align: middle; text-align: center; background-color: #e5e5e5; }
+.left { vertical-align: middle; text-align: left; background-color: #e5e5e5; }
+.cell { vertical-align: middle; text-align: center; background-color: #f0f0f0; font-size: smaller; }
+.topleft { vertical-align: middle; text-align: center; background-color: #e0e0e0; }
+.heading { font-weight: normal; vertical-align: middle; }
+.alt { font-style: italic; }
+img { width: 100px; height: 100px; }
+.bottom-cell { text-align: center; vertical-align: middle; background-color: #f0f0f0; font-size: smaller; }
+table { width: 100%; border-width: 0px; border-spacing: 1px; }
+
+/* Colors */
+.solid { padding: .6rem; margin: 0.3rem; }
+.blue { color: #fff; background-color: #2d6288; }
+.purple { color: #6b6d6c; background-color: #cdcbcc; }
+</style>
+
+<!--
+<center>
+<div class="solid blue">
+<h1>CMLL Algorithms</h1>
+</div>
+<div class="solid purple">
+<p>Compiled from various sources.<br>
+Aim for about 2 second execution on average, how you recognize the cases is completely up to you.</p>
+</div>
+</center>
+-->
+<center>
+<p>Compiled from various sources.<br>
+Aim for about 2 second execution on average, how you recognize the cases is completely up to you.</p>
+</center>
+
+<table>
+<thead>
+  <tr>
+	<td class="topleft"><br></td>
+	<td class="top heading"><img alt="1" src="./s3_1.gif"><br>Swaps - None</td>
+	<td class="top heading"><img alt="2" src="./s3_2.gif"><br>Swaps - Back</td>
+	<td class="top heading"><img alt="3" src="./s3_3.gif"><br>Swaps - Right</td>
+	<td class="top heading"><img alt="4" src="./s3_4.gif"><br>Swaps - Front</td>
+	<td class="top heading"><img alt="5" src="./s3_5.gif"><br>Swaps - Left</td>
+	<td class="top heading"><img alt="6" src="./s3_6.gif"><br>Swaps - Diagonal</td>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+	<td class="left heading"><img alt="A" src="./s3_A.gif">All Oriented</td>
+	<td class="cell">Solved!</td>
+	<td class="cell">(R'UL') (U2RU') (R'U2R2)</td>
+	<td class="cell">U(A1)</td>
+	<td class="cell">U2(A1)</td>
+	<td class="cell">U'(A4)</td>
+	<td class="cell">(R'UL') (U2RU') x' (UL'U2) (RU'R) x</td>
+  </tr>
+  <tr>
+	<td class="left heading"><img alt="B" src="./s3_B.gif">Anti-Sune</td>
+	<td class="cell">RU2R'U'RU'R'</td>
+	<td class="cell">R'FU2F'RFR'U2RF'<br><br><span class="alt">(C4)'<br>(C4)</span></td>
+	<td class="cell">R'FRF'U2F'U2F<br><br><span class="alt">(C2)'<br>(C3)</span></td>
+	<td class="cell"><span class="alt">(C3)'<br>(C2)</span></td>
+	<td class="cell">R'ULU'RUR'<br><br><span class="alt">(C5)'<br>(C5)</span></td>
+	<td class="cell">RU2R'U'RU'BUB'U'R'<br><br><span class="alt">(C6)'<br>(C6)</span></td>
+  </tr>
+  <tr>
+	<td class="left heading"><img alt="C" src="./s3_C.gif">Sune</td>
+	<td class="cell">RUR'URU2R'<br><br><span class="alt">(B1)'</span></td>
+	<td class="cell"><span class="alt">(B3)'<br>(B4)</span></td>
+	<td class="cell"><span class="alt">(B4)'<br>(B3)</span></td>
+	<td class="cell"><span class="alt">(B2)'<br>(B2)</span></td>
+	<td class="cell"><span class="alt">(B5)'<br>(B5)</span></td>
+	<td class="cell"><span class="alt">(B6)'<br>(B6)</span></td>
+  </tr>
+  <tr>
+	<td class="left heading"><img alt="D" src="./s3_D.gif">Bowtie/L</td>
+	<td class="cell">(R'DR'DR')U<!---->(R'DR'DR')'<br><span class="alt">(D1)'</span></td>
+	<td class="cell">R'F2R'U'RF2R'UR2<br><br><span class="alt">(E5)'<br>(D3)</span></td>
+	<td class="cell"><span class="alt">(E3)'<br>(D2)</span></td>
+	<td class="cell">RU'r'U'F'UF<br><span class="alt">(F5)'<br>(D5)</span></td>
+	<td class="cell"><span class="alt">(F3)'<br>(D4)</span></td>
+	<td class="cell">RUR2F2rFR'F2R<br><br><span class="alt">(D6)'</span></td>
+  </tr>
+  <tr>
+	<td class="left heading"><img alt="E" src="./s3_E.gif">Headlights/U</td>
+	<td class="cell">R2F'UFU'F'U'F2RF'R<br><br>(F1)'</td>
+	<td class="cell">RU'L'UR'U2B'UBL<br><br><span class="alt">(E2)'</span></td>
+	<td class="cell"><span class="alt">(D3)'<br>(E5)</span></td>
+	<td class="cell">RB'UR'B'RU'R'B<br><br><span class="alt">(F4)'</span></td>
+	<td class="cell"><span class="alt">(D2)'<br>(E3)</span></td>
+	<td class="cell">FRUR'U'F'<br><br><span class="alt">(E6)'</span></td>
+  </tr>
+  <tr>
+	<td class="left heading"><img alt="F" src="./s3_F.gif">Chameleon/T</td>
+	<td class="cell"><span class="alt">(E1)'</span></td>
+	<td class="cell">R'UrU2R2FRF'R<br><br><span class="alt">(F2)'</span></td>
+	<td class="cell"><span class="alt">(D5)'<br>(F5)</span></td>
+	<td class="cell"><span class="alt">(E4)'</span></td>
+	<td class="cell"><span class="alt">(D4)'<br>(F3)</span></td>
+	<td class="cell">R'URUBU2B'RB'R'B<br><span class="alt">(F6)'</span></td>
+  </tr>
+  <tr>
+	<td class="left heading"><img alt="G" src="./s3_G.gif">Dead Guy/Pi/Bruno (Platypus)</td>
+	<td class="cell"><span class="alt">(E6)2<br><br>(G1)'</span></td>
+	<td class="cell">R'F2RF'U2RU'L'B'U<br><br><span class="alt">(G4)'<br>(G4)</span></td>
+	<td class="cell">R'FRUFU'RUR'U'F'<br><br><span class="alt">(H2')H4'</span></td>
+	<td class="cell"><span class="alt">(G2)'<br>(G2)</span></td>
+	<td class="cell">RU'L'UR'ULUL'UL<br><br><span class="alt">(H3)' (H5)'</span></td>
+	<td class="cell">R'U'RU'R'UF'UFR<br><br><span class="alt">(G6)'</span></td>
+  </tr>
+  <tr>
+	<td class="left heading"><img alt="H" src="./s3_H.gif">Double Anti-Sune (Creeper)</td>
+	<td class="cell">(R'FRUR')F(R'FRUR')'<br><br><span class="alt">(H1)'</span></td>
+	<td class="cell"><span class="alt">(G3)'<br>(H2, H4)</span></td>
+	<td class="cell"><span class="alt">(G5)'<br>(H3, H5)</span></td>
+	<td class="cell"><span class="alt">(G3)'<br>(H2)</span></td>
+	<td class="cell"><span class="alt">(G5)'<br>(H3</span>)</td>
+	<td class="cell"><span class="alt">(E6)3</span><br>F2R2URF2<br><br><span class="alt">(H6)'</span></td>
+  </tr>
+<tbody>
+</table>
+
+<br><br>
+	
+<table style="font-size: smaller;">
+<tbody>
+  <tr><td class="topleft"></td>
+	<td class="top">1</td>
+	<td class="top">2</td>
+	<td class="top">3</td>
+	<td class="top">4</td>
+	<td class="top">5</td>
+	<td class="top">6</td>
+  </tr>
+  <tr>
+	<td class="top">A</td> <!--placeholder-->
+	<td class="bottom-cell">Solved!</td>
+	<td class="bottom-cell">(U2)R'UL'U2RU'R'U2R2</td>
+	<td class="bottom-cell">(U)R'UL'U2RU'R'U2R2</td>
+	<td class="bottom-cell">R'UL'U2RU'R'U2R2</td>
+	<td class="bottom-cell">(U')R'UL'U2RU'R'U2R2</td>
+	<td class="bottom-cell">R'UL'U2RU'BL'B2RB'R</td>
+  </tr>
+  <tr>
+	<td class="top">B</td>
+	<td class="bottom-cell">R'U'RU'R'U2R</td>
+	<td class="bottom-cell">L'URU'BR'F'LU'L'FL</td>
+	<td class="bottom-cell">B'RBR'U2R'U2R</td>
+	<td class="bottom-cell">LU2L'U2L'BLB'</td>
+	<td class="bottom-cell">R'ULU'RUR'</td>
+	<td class="bottom-cell">RU2R'FR'F'RU'RU'R'</td>
+  </tr>
+  <tr>
+	<td class="top">C</td>
+	<td class="bottom-cell">RUR'URU2R'</td>
+	<td class="bottom-cell">L'U2LU2LF'L'F</td>
+	<td class="bottom-cell">FR'F'RU2RU2R'</td>
+	<td class="bottom-cell">LU'R'UF'RBL'ULB'L'</td>
+	<td class="bottom-cell">RU'L'UR'U'R</td>
+	<td class="bottom-cell">R'U2RB'RBR'UR'UR</td>
+  </tr>
+  <tr>
+	<td class="top">D</td>
+	<td class="bottom-cell">R'DR'DR'U <!--whats in here?--> RD'RD'R</td>
+	<td class="bottom-cell">RBL'B2RB'LBR'BR'</td>
+	<td class="bottom-cell">(U')L'B'RB2L'BR'B'LB'L</td>
+	<td class="bottom-cell">(U')L'B'R'BL'B'RB</td>
+	<td class="bottom-cell">RBLB'R'BL'B'</td>
+	<td class="bottom-cell">RUR2F2rFR'F2L</td>
+  </tr>
+  <tr>
+	<td class="top">E</td>
+	<td class="bottom-cell">x'(RU'R')z'(RU'R)z(R'UR)z'(R'UR')</td>
+	<td class="bottom-cell">(U')FR2DR'URD'R2U'F'</td>
+	<td class="bottom-cell">R'UL'URU'LU2R'UR</td>
+	<td class="bottom-cell">RB'UR'B'RU'R'B</td>
+	<td class="bottom-cell">R'FRUR'FRUFU2F'</td>
+	<td class="bottom-cell">(U')FRUR'U'F'</td>
+  </tr>
+  <tr>
+	<td class="top">F</td>
+	<td class="bottom-cell">x'z'(RU'R)z(R'U'R)z'(R'UR')z(RUR')</td>
+	<td class="bottom-cell">R'UrU2R2FRF'R</td>
+	<td class="bottom-cell">(U')R'U'RURB'R'B</td>
+	<td class="bottom-cell">FR'U'RF'R'UF'R</td>
+	<td class="bottom-cell">(U')RUR'U'R'FRF'</td>
+	<td class="bottom-cell">R'FRF'RU2R'U'F'U'F</td>
+  </tr>
+  <tr>
+	<td class="top">G</td>
+	<td class="bottom-cell">FRUR'U'RUR'U'F'</td>
+	<td class="bottom-cell">R'F2RF'U2RU'L'B'U</td>
+	<td class="bottom-cell">(U')R'FRUFU'RUR'U'F'</td>
+	<td class="bottom-cell">RB2R'BU2R'ULFU'</td>
+	<td class="bottom-cell">R'FR'F'R2U2B'RBR'</td>
+	<td class="bottom-cell">(U2)R'U'RU'R'UF'UFR</td>
+  </tr>
+  <tr>
+	<td class="top">H</td>
+	<td class="bottom-cell">(U)R'FRUR'FRU'R'F'R</td>
+	<td class="bottom-cell">FURU'R'UF'U'R'F'R</td>
+	<td class="bottom-cell">RUR'URUL'UR'U'L</td>
+    <td class="bottom-cell">(U2)FURU'R'UF'U'R'F'R</td>
+    <td class="bottom-cell">(U2)RUR'URUL'UR'U'L</td>
+	<td class="bottom-cell">(U)FRUR'U'RUR'U'RUR'U'F'</td>
+  </tr>
+</tbody>
+</table>
+
+<br><br>
+
+<center>
+<!--<div class="solid purple">-->
+<hr>
+<h4>Sources</h4>
+<a href="http://helm.lu/cube/cmll/cmll.html">Kirjava's CMLL Algorithms</a> (Layout taken from this)<br>
+<a href="http://wafflelikescubes.webs.com/cmllalgorithms.htm">CMLL Algorithms - Waffle's Cube Thingy</a><br>
+<a href="http://lubixcube.com/CMLL.html">CMLL (Lubix Cube)</a>
+<!--<div>-->
+</center>
+
+	
+
+
+
+
+  </div>
+</main>
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-64685214-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+<div class="container">
+<footer>
+	<p class="copy">© 2015-16 Kyle Feng</p>
+</footer>
+</div>
+
+</body>
+</html>
+

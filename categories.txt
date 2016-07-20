@@ -1,0 +1,4 @@
+programming
+linguistics
+audio/visual (generative art / data visualization / live coding)
+emacs/vim

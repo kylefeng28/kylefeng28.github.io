@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Speedcubing on kylefeng28</title>
+    <link>http://kylefeng28.github.io/tags/speedcubing/</link>
+    <description>Recent content in Speedcubing on kylefeng28</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="http://kylefeng28.github.io/tags/speedcubing/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CMLL Algorithms</title>
+      <link>http://kylefeng28.github.io/cmll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kylefeng28.github.io/cmll/</guid>
+      <description>&lt;style&gt;
+/* Color scheme: original
+headers: #e5e5e5
+topleft: #e0e0e0
+cell: #f0f0f0
+*/
+
+/* Color scheme: new
+#2d6288
+#a9a3e0
+#7ab9d3
+#d2daf0
+*/
+
+body { background-color: #efefef; }
+.content { font-family: &#34;Open Sans&#34;, &#34;Source Sans Pro&#34;, sans-serif; /* sans easier to read on screen */
+	position: relative; left: calc(-50vw + 50%); width: 100vw; } /* fill whole screen width */
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+.top { vertical-align: middle; text-align: center; background-color: #e5e5e5; }
+.left { vertical-align: middle; text-align: left; background-color: #e5e5e5; }
+.cell { vertical-align: middle; text-align: center; background-color: #f0f0f0; font-size: smaller; }
+.topleft { vertical-align: middle; text-align: center; background-color: #e0e0e0; }
+.heading { font-weight: normal; vertical-align: middle; }
+.alt { font-style: italic; }
+img { width: 100px; height: 100px; }
+.bottom-cell { text-align: center; vertical-align: middle; background-color: #f0f0f0; font-size: smaller; }
+table { width: 100%; border-width: 0px; border-spacing: 1px; }
+
+/* Colors */
+.solid { padding: .6rem; margin: 0.3rem; }
+.blue { color: #fff; background-color: #2d6288; }
+.purple { color: #6b6d6c; background-color: #cdcbcc; }
+&lt;/style&gt;
+
+&lt;!--
+&lt;center&gt;
+&lt;div class=&#34;solid blue&#34;&gt;
+&lt;h1&gt;CMLL Algorithms&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div class=&#34;solid purple&#34;&gt;
+&lt;p&gt;Compiled from various sources.&lt;br&gt;
+Aim for about 2 second execution on average, how you recognize the cases is completely up to you.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/center&gt;
+--&gt;
+&lt;center&gt;
+&lt;p&gt;Compiled from various sources.&lt;br&gt;
+Aim for about 2 second execution on average, how you recognize the cases is completely up to you.&lt;/p&gt;
+&lt;/center&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;topleft&#34;&gt;&lt;br&gt;&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;1&#34; src=&#34;./s3_1.gif&#34;&gt;&lt;br&gt;Swaps - None&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;2&#34; src=&#34;./s3_2.gif&#34;&gt;&lt;br&gt;Swaps - Back&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;3&#34; src=&#34;./s3_3.gif&#34;&gt;&lt;br&gt;Swaps - Right&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;4&#34; src=&#34;./s3_4.gif&#34;&gt;&lt;br&gt;Swaps - Front&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;5&#34; src=&#34;./s3_5.gif&#34;&gt;&lt;br&gt;Swaps - Left&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;6&#34; src=&#34;./s3_6.gif&#34;&gt;&lt;br&gt;Swaps - Diagonal&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;A&#34; src=&#34;./s3_A.gif&#34;&gt;All Oriented&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;Solved!&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;(R&#39;UL&#39;) (U2RU&#39;) (R&#39;U2R2)&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;U(A1)&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;U2(A1)&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;U&#39;(A4)&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;(R&#39;UL&#39;) (U2RU&#39;) x&#39; (UL&#39;U2) (RU&#39;R) x&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;B&#34; src=&#34;./s3_B.gif&#34;&gt;Anti-Sune&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;RU2R&#39;U&#39;RU&#39;R&#39;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;R&#39;FU2F&#39;RFR&#39;U2RF&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(C4)&#39;&lt;br&gt;(C4)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;R&#39;FRF&#39;U2F&#39;U2F&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(C2)&#39;&lt;br&gt;(C3)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(C3)&#39;&lt;br&gt;(C2)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;R&#39;ULU&#39;RUR&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(C5)&#39;&lt;br&gt;(C5)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;RU2R&#39;U&#39;RU&#39;BUB&#39;U&#39;R&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(C6)&#39;&lt;br&gt;(C6)&lt;/span&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;C&#34; src=&#34;./s3_C.gif&#34;&gt;Sune&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;RUR&#39;URU2R&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(B1)&#39;&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(B3)&#39;&lt;br&gt;(B4)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(B4)&#39;&lt;br&gt;(B3)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(B2)&#39;&lt;br&gt;(B2)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(B5)&#39;&lt;br&gt;(B5)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(B6)&#39;&lt;br&gt;(B6)&lt;/span&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;D&#34; src=&#34;./s3_D.gif&#34;&gt;Bowtie/L&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;(R&#39;DR&#39;DR&#39;)U&lt;!----&gt;(R&#39;DR&#39;DR&#39;)&#39;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(D1)&#39;&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;R&#39;F2R&#39;U&#39;RF2R&#39;UR2&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(E5)&#39;&lt;br&gt;(D3)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(E3)&#39;&lt;br&gt;(D2)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;RU&#39;r&#39;U&#39;F&#39;UF&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(F5)&#39;&lt;br&gt;(D5)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(F3)&#39;&lt;br&gt;(D4)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;RUR2F2rFR&#39;F2R&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(D6)&#39;&lt;/span&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;E&#34; src=&#34;./s3_E.gif&#34;&gt;Headlights/U&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;R2F&#39;UFU&#39;F&#39;U&#39;F2RF&#39;R&lt;br&gt;&lt;br&gt;(F1)&#39;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;RU&#39;L&#39;UR&#39;U2B&#39;UBL&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(E2)&#39;&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(D3)&#39;&lt;br&gt;(E5)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;RB&#39;UR&#39;B&#39;RU&#39;R&#39;B&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(F4)&#39;&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(D2)&#39;&lt;br&gt;(E3)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;FRUR&#39;U&#39;F&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(E6)&#39;&lt;/span&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;F&#34; src=&#34;./s3_F.gif&#34;&gt;Chameleon/T&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(E1)&#39;&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;R&#39;UrU2R2FRF&#39;R&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(F2)&#39;&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(D5)&#39;&lt;br&gt;(F5)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(E4)&#39;&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(D4)&#39;&lt;br&gt;(F3)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;R&#39;URUBU2B&#39;RB&#39;R&#39;B&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(F6)&#39;&lt;/span&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;G&#34; src=&#34;./s3_G.gif&#34;&gt;Dead Guy/Pi/Bruno (Platypus)&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(E6)2&lt;br&gt;&lt;br&gt;(G1)&#39;&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;R&#39;F2RF&#39;U2RU&#39;L&#39;B&#39;U&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(G4)&#39;&lt;br&gt;(G4)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;R&#39;FRUFU&#39;RUR&#39;U&#39;F&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(H2&#39;)H4&#39;&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(G2)&#39;&lt;br&gt;(G2)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;RU&#39;L&#39;UR&#39;ULUL&#39;UL&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(H3)&#39; (H5)&#39;&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;R&#39;U&#39;RU&#39;R&#39;UF&#39;UFR&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(G6)&#39;&lt;/span&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;H&#34; src=&#34;./s3_H.gif&#34;&gt;Double Anti-Sune (Creeper)&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;(R&#39;FRUR&#39;)F(R&#39;FRUR&#39;)&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(H1)&#39;&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(G3)&#39;&lt;br&gt;(H2, H4)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(G5)&#39;&lt;br&gt;(H3, H5)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(G3)&#39;&lt;br&gt;(H2)&lt;/span&gt;&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(G5)&#39;&lt;br&gt;(H3&lt;/span&gt;)&lt;/td&gt;
+	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(E6)3&lt;/span&gt;&lt;br&gt;F2R2URF2&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(H6)&#39;&lt;/span&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;tbody&gt;
+&lt;/table&gt;
+
+&lt;br&gt;&lt;br&gt;
+	
+&lt;table style=&#34;font-size: smaller;&#34;&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;&lt;td class=&#34;topleft&#34;&gt;&lt;/td&gt;
+	&lt;td class=&#34;top&#34;&gt;1&lt;/td&gt;
+	&lt;td class=&#34;top&#34;&gt;2&lt;/td&gt;
+	&lt;td class=&#34;top&#34;&gt;3&lt;/td&gt;
+	&lt;td class=&#34;top&#34;&gt;4&lt;/td&gt;
+	&lt;td class=&#34;top&#34;&gt;5&lt;/td&gt;
+	&lt;td class=&#34;top&#34;&gt;6&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;top&#34;&gt;A&lt;/td&gt; &lt;!--placeholder--&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;Solved!&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;(U2)R&#39;UL&#39;U2RU&#39;R&#39;U2R2&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;(U)R&#39;UL&#39;U2RU&#39;R&#39;U2R2&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;R&#39;UL&#39;U2RU&#39;R&#39;U2R2&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;(U&#39;)R&#39;UL&#39;U2RU&#39;R&#39;U2R2&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;R&#39;UL&#39;U2RU&#39;BL&#39;B2RB&#39;R&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;top&#34;&gt;B&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;R&#39;U&#39;RU&#39;R&#39;U2R&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;L&#39;URU&#39;BR&#39;F&#39;LU&#39;L&#39;FL&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;B&#39;RBR&#39;U2R&#39;U2R&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;LU2L&#39;U2L&#39;BLB&#39;&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;R&#39;ULU&#39;RUR&#39;&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;RU2R&#39;FR&#39;F&#39;RU&#39;RU&#39;R&#39;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;top&#34;&gt;C&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;RUR&#39;URU2R&#39;&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;L&#39;U2LU2LF&#39;L&#39;F&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;FR&#39;F&#39;RU2RU2R&#39;&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;LU&#39;R&#39;UF&#39;RBL&#39;ULB&#39;L&#39;&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;RU&#39;L&#39;UR&#39;U&#39;R&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;R&#39;U2RB&#39;RBR&#39;UR&#39;UR&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;top&#34;&gt;D&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;R&#39;DR&#39;DR&#39;U &lt;!--whats in here?--&gt; RD&#39;RD&#39;R&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;RBL&#39;B2RB&#39;LBR&#39;BR&#39;&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;(U&#39;)L&#39;B&#39;RB2L&#39;BR&#39;B&#39;LB&#39;L&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;(U&#39;)L&#39;B&#39;R&#39;BL&#39;B&#39;RB&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;RBLB&#39;R&#39;BL&#39;B&#39;&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;RUR2F2rFR&#39;F2L&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;top&#34;&gt;E&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;x&#39;(RU&#39;R&#39;)z&#39;(RU&#39;R)z(R&#39;UR)z&#39;(R&#39;UR&#39;)&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;(U&#39;)FR2DR&#39;URD&#39;R2U&#39;F&#39;&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;R&#39;UL&#39;URU&#39;LU2R&#39;UR&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;RB&#39;UR&#39;B&#39;RU&#39;R&#39;B&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;R&#39;FRUR&#39;FRUFU2F&#39;&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;(U&#39;)FRUR&#39;U&#39;F&#39;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;top&#34;&gt;F&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;x&#39;z&#39;(RU&#39;R)z(R&#39;U&#39;R)z&#39;(R&#39;UR&#39;)z(RUR&#39;)&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;R&#39;UrU2R2FRF&#39;R&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;(U&#39;)R&#39;U&#39;RURB&#39;R&#39;B&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;FR&#39;U&#39;RF&#39;R&#39;UF&#39;R&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;(U&#39;)RUR&#39;U&#39;R&#39;FRF&#39;&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;R&#39;FRF&#39;RU2R&#39;U&#39;F&#39;U&#39;F&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;top&#34;&gt;G&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;FRUR&#39;U&#39;RUR&#39;U&#39;F&#39;&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;R&#39;F2RF&#39;U2RU&#39;L&#39;B&#39;U&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;(U&#39;)R&#39;FRUFU&#39;RUR&#39;U&#39;F&#39;&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;RB2R&#39;BU2R&#39;ULFU&#39;&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;R&#39;FR&#39;F&#39;R2U2B&#39;RBR&#39;&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;(U2)R&#39;U&#39;RU&#39;R&#39;UF&#39;UFR&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+	&lt;td class=&#34;top&#34;&gt;H&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;(U)R&#39;FRUR&#39;FRU&#39;R&#39;F&#39;R&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;FURU&#39;R&#39;UF&#39;U&#39;R&#39;F&#39;R&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;RUR&#39;URUL&#39;UR&#39;U&#39;L&lt;/td&gt;
+    &lt;td class=&#34;bottom-cell&#34;&gt;(U2)FURU&#39;R&#39;UF&#39;U&#39;R&#39;F&#39;R&lt;/td&gt;
+    &lt;td class=&#34;bottom-cell&#34;&gt;(U2)RUR&#39;URUL&#39;UR&#39;U&#39;L&lt;/td&gt;
+	&lt;td class=&#34;bottom-cell&#34;&gt;(U)FRUR&#39;U&#39;RUR&#39;U&#39;RUR&#39;U&#39;F&#39;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;center&gt;
+&lt;!--&lt;div class=&#34;solid purple&#34;&gt;--&gt;
+&lt;hr&gt;
+&lt;h4&gt;Sources&lt;/h4&gt;
+&lt;a href=&#34;http://helm.lu/cube/cmll/cmll.html&#34;&gt;Kirjava&#39;s CMLL Algorithms&lt;/a&gt; (Layout taken from this)&lt;br&gt;
+&lt;a href=&#34;http://wafflelikescubes.webs.com/cmllalgorithms.htm&#34;&gt;CMLL Algorithms - Waffle&#39;s Cube Thingy&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://lubixcube.com/CMLL.html&#34;&gt;CMLL (Lubix Cube)&lt;/a&gt;
+&lt;!--&lt;div&gt;--&gt;
+&lt;/center&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

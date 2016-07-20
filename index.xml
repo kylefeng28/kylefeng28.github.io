@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kylefeng28</title>
-    <link>http://kylefeng28.github.io/</link>
+    <link>https://kylefeng28.github.io/</link>
     <description>Recent content on kylefeng28</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Wed, 20 Jul 2016 01:20:00 +0800</lastBuildDate>
-    <atom:link href="http://kylefeng28.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kylefeng28.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Playground</title>
-      <link>http://kylefeng28.github.io/playground/</link>
+      <link>https://kylefeng28.github.io/playground/</link>
       <pubDate>Wed, 20 Jul 2016 01:20:00 +0800</pubDate>
       
-      <guid>http://kylefeng28.github.io/playground/</guid>
+      <guid>https://kylefeng28.github.io/playground/</guid>
       <description>&lt;p&gt;Random stuff I make.&lt;/p&gt;
 
 &lt;!-- TODO make data.json or something. change default layout to none --&gt;
@@ -25,10 +25,10 @@
     
     <item>
       <title></title>
-      <link>http://kylefeng28.github.io/cmll/index_old/</link>
+      <link>https://kylefeng28.github.io/cmll/index_old/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://kylefeng28.github.io/cmll/index_old/</guid>
+      <guid>https://kylefeng28.github.io/cmll/index_old/</guid>
       <description>&lt;!doctype html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -250,10 +250,10 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
     
     <item>
       <title></title>
-      <link>http://kylefeng28.github.io/lorem/</link>
+      <link>https://kylefeng28.github.io/lorem/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://kylefeng28.github.io/lorem/</guid>
+      <guid>https://kylefeng28.github.io/lorem/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis elementum est, eu elementum ante congue vel. Etiam eu arcu pulvinar, fringilla elit non, dignissim odio. Nulla dui nulla, placerat a rutrum eu, dapibus eget urna. Duis iaculis lacinia tincidunt. Curabitur malesuada maximus velit, ut tristique leo luctus nec. Donec pulvinar nulla quis lectus ullamcorper malesuada. Nulla est lorem, elementum in porta at, convallis nec neque. Donec fringilla luctus mollis. Fusce et mattis libero.&lt;/p&gt;
 
 &lt;p&gt;Donec et erat eu nunc vulputate semper eu at massa. Maecenas commodo aliquam augue, in hendrerit diam. Ut sit amet scelerisque elit, ut ullamcorper ante. Aenean sollicitudin risus a sapien iaculis, in porttitor felis tempus. Aenean nec rhoncus felis, sit amet sollicitudin augue. Maecenas ultricies dictum neque. Pellentesque eu facilisis orci. Cras lorem mi, fermentum eu finibus sed, consequat in arcu. Sed non leo quis ligula dictum bibendum vitae sit amet mauris. In eget cursus nunc.&lt;/p&gt;
@@ -268,17 +268,17 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
     
     <item>
       <title>About Me</title>
-      <link>http://kylefeng28.github.io/about/</link>
+      <link>https://kylefeng28.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://kylefeng28.github.io/about/</guid>
+      <guid>https://kylefeng28.github.io/about/</guid>
       <description>&lt;p&gt;Hello! I&amp;rsquo;m Kyle, a computer science major at the University of North Carolina at Chapel Hill.
 I&amp;rsquo;m interested in using technology to better people&amp;rsquo;s lives, especially in the field of accessibility.
-On this site, I&amp;rsquo;ll share things that I learn and things that I make on my &lt;a href=&#34;http://kylefeng28.github.io/blog&#34;&gt;Blog&lt;/a&gt;.
+On this site, I&amp;rsquo;ll share things that I learn and things that I make on my &lt;a href=&#34;https://kylefeng28.github.io/blog&#34;&gt;Blog&lt;/a&gt;.
 You can also find me on &lt;a href=&#34;https://github.com/kylefeng28&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Some of the things I do for fun include
-playing violin and making random stuff (find some on the &lt;a href=&#34;http://kylefeng28.github.io/playground&#34;&gt;Playground&lt;/a&gt;).&lt;/p&gt;
+playing violin and making random stuff (find some on the &lt;a href=&#34;https://kylefeng28.github.io/playground&#34;&gt;Playground&lt;/a&gt;).&lt;/p&gt;
 
 &lt;!--
 &lt;style&gt;
@@ -293,10 +293,10 @@ playing violin and making random stuff (find some on the &lt;a href=&#34;http://
     
     <item>
       <title>CMLL Algorithms</title>
-      <link>http://kylefeng28.github.io/cmll/</link>
+      <link>https://kylefeng28.github.io/cmll/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://kylefeng28.github.io/cmll/</guid>
+      <guid>https://kylefeng28.github.io/cmll/</guid>
       <description>&lt;style&gt;
 /* Color scheme: original
 headers: #e5e5e5

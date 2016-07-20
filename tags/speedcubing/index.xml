@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Speedcubing on kylefeng28</title>
-    <link>http://kylefeng28.github.io/tags/speedcubing/</link>
+    <link>https://kylefeng28.github.io/tags/speedcubing/</link>
     <description>Recent content in Speedcubing on kylefeng28</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="http://kylefeng28.github.io/tags/speedcubing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kylefeng28.github.io/tags/speedcubing/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>CMLL Algorithms</title>
-      <link>http://kylefeng28.github.io/cmll/</link>
+      <link>https://kylefeng28.github.io/cmll/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://kylefeng28.github.io/cmll/</guid>
+      <guid>https://kylefeng28.github.io/cmll/</guid>
       <description>&lt;style&gt;
 /* Color scheme: original
 headers: #e5e5e5

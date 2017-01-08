@@ -9,9 +9,10 @@ Made by Kyle Feng. Copyright (c) 2016
 	<title>Pulsations – Rays</title>
 	<script src="jquery-2.2.3.js"></script>
 	<script src="raphael.min.js"></script>
+	<script src="Please.min.js"></script>
 <style>
 body {
-	background-color: gray;
+	background-color: black;
 	margin: 0px;
 }
 #container {
@@ -28,61 +29,147 @@ body {
 </div>
 
 <script>
+"use strict";
 
+var modes = [ "morph", "random" ];
 var N = 36;
 
-var centerx, centery;
+var bgMode = 0;
+var mode = 0;
+var showCircle = false;
+var isGrayscale = false;
+var timeout = 400;
+
+var centerX, centerY;
 var paper;
-var circle, bars;
+var bg, circle, bars;
+
+function generateColor() {
+	return Please.HEX_to_RGB(Please.make_color({ golden: false, full_random: true }));
+}
 
 function animateBar(bar) {
-	var x = Math.floor(Math.random() * 500);
-	changeColor(bar);
-	bar.animate({ "height": x }, 400, ">"/*cubic-bezier: */, function() { animateBar(bar); }); 
+	var x = Math.floor(Math.random() * Math.min(window.innerWidth/2, window.innerHeight/2));
+	var ang = bar.data("ang"); // This actually rotates it relatively, not absolutely. However, any other value doesn't seem to work yet
+	var color = bar.data("color");
+
+	// Change color
+	switch (modes[mode]) {
+	case "morph":
+		color.r = (color.r+10) % 255;
+		color.g = (color.g+10) % 255;
+		color.b = (color.b+10) % 255;
+		break;
+	case "random":
+		var color_new = generateColor();
+		color.r = color_new.r;
+		color.g = color_new.g;
+		color.b = color_new.b;
+		break;
+	}
+
+	if (!isGrayscale) {
+		bar.animate({ "fill": "rgb("+[color.r, color.g, color.b]+")" }, timeout, ">");
+	} else {
+		// Get average of RGB components
+		var gray = Math.round((color.r + color.g + color.b) / 3);
+		bar.animate({ "fill": "rgb("+[ gray, gray, gray ]+")" }, timeout, ">");
+	}
+
+	// Rotate
+	// bar.animate({ "transform": "r" + [ang, centerX, centerY] }, 100, "linear");
+
+	// Change size
+	bar.animate({ "height": x }, timeout, ">", function() { animateBar(bar); }); // use cubic-beizer?
 	// TODO rotation
 }
 
 function animateCircle(circle) {
-	changeColor(circle, function() { animateCircle(circle) });
+	// Get statistics: sum, min, max
+	var stats = bars.reduce(function(acc, bar) {
+		var x = bar.attr("height");
+		return { sum: acc.sum + x, min: Math.min(acc.min, x), max: Math.max(acc.max, x) };
+	}, { sum: 0, min: Infinity, max: -Infinity });
+	var avg = stats.sum / N;
+
+	var r = showCircle ? avg : 1;
+
+	// Match background color, offset by a few shades
+	var bgColor = bg.data("color");
+	var color = Raphael.color();
+	color.r = 255-bgColor.r;
+	color.g = 255-bgColor.g;
+	color.b = 255-bgColor.b;
+
+	if (!isGrayscale) {
+		circle.animate({ "r": r, "stroke": "rgb("+[color.r, color.g, color.b]+")" }, timeout, ">", function() { animateCircle(circle); });
+	} else {
+		// Average of RGB components
+		var gray = Math.round((color.r + color.g + color.b) / 3);
+		circle.animate({ "r": r, "stroke": "rgb("+[gray, gray, gray]+")" }, timeout, ">", function() { animateCircle(circle); });
+	}
 }
-	
-function changeColor(el, callback) {
-	var color = $(el).data("color");
-	color[0] = (color[0]+20) % 255;
-	color[1] = (color[1]+20) % 255;
-	color[2] = (color[2]+20) % 255;
 
-	el.animate({ "fill": "rgb("+color+")" }, 400, ">", callback); 
+function setBgColor(bg, color) {
+	bg.data("color", color);
+	updateBg(bg);
 }
 
-function pulse1(circle) { circle.animate({ "r": 300 }, 400, ">", function() { pulse2(circle); }); }
-function pulse2(circle) { circle.animate({ "r": 50  }, 400, "<", function() { pulse1(circle); }); }
+function updateBg(bg) {
+	var color = bg.data("color");
 
-function animate() {
-	$(bars).each(function(i) { animateBar(this); });
-	animateCircle(circle);
-	// pulse1(circle);
+	if (!isGrayscale) {
+		bg.animate({ "fill": "rgb("+[color.r, color.g, color.b]+")" }, timeout, ">");
+	} else {
+		// Average of RGB components
+		var gray = Math.round((color.r + color.g + color.b) / 3);
+		bg.animate({ "fill": "rgb("+[gray, gray, gray]+")" }, timeout, ">");
+	}
 }
 
 $(document).ready(function() {
 	$("#container").css({ "min-height": $(window).height() });
 
 	paper = Raphael("container");
-	centerx = paper.width / 2;
-	centery = paper.height / 2;
+	centerX = paper.width / 2;
+	centerY = paper.height / 2;
 
-	bars = [];
+	bg = paper.rect(0, 0, window.innerWidth, window.innerHeight);
+	bg.attr("stroke", "none");
+	setBgColor(bg, {r: 0, g: 0, b: 0});
+
+	bars = new Array(N);
 	for (var i = 0; i < N; i++) {
 		var ang = i*360/N;
-		bars[i] = paper.rect(centerx, centery, 2, 0).attr("fill", "#000").attr("stroke", "none").transform("r"+ang);
-		$(bars[i]).data("color", [ Math.floor(Math.random() * 255), Math.floor(Math.random() * 255), Math.floor(Math.random() * 255) ]);
-		$(bars[i]).data("ang", ang);
+		var color = generateColor();
+
+		bars[i] = paper.rect(centerX, centerY, 2, 0).attr("fill", color).attr("stroke", "none").transform("r"+[ang, centerX, centerY]);
+		bars[i].data("color", color);
+		bars[i].data("ang", ang);
+		animateBar(bars[i]);
 	}
 
-	circle = paper.circle(centerx, centery, 2).attr("fill", "#000").attr("stroke", "none");
-	$(circle).data("color", [ Math.floor(Math.random() * 255), Math.floor(Math.random() * 255), Math.floor(Math.random() * 255) ]);
+	circle = paper.circle(centerX, centerY, 2);
+	animateCircle(circle);
 
-	animate();
+	 var instructions = "Keyboard controls:\n" +
+	"g: Toggle grayscale\n" +
+	"c: Toggle circle\n" +
+	"m: Toggle mode (morph, random)\n" +
+	"b: Set background color to black\n" +
+	"w: Set background color to white\n" +
+	"r: Set background color to random";
+});
+
+$(document).keydown(function(e) {
+	switch (e.key) {
+	case 'g': isGrayscale = !isGrayscale; updateBg(bg); break;
+	case 'c': showCircle = !showCircle; break;
+	case 'm': mode = (mode+1) % modes.length; break;
+	case 'b': setBgColor(bg, {r: 0, g: 0, b: 0}); break;
+	case 'w': setBgColor(bg, {r: 255, g: 255, b: 255}); break;
+	case 'r': setBgColor(bg, generateColor()); break;
+	}
 });
 
 </script>

@@ -17,8 +17,6 @@
       <guid>https://kylefeng28.github.io/playground/</guid>
       <description>&lt;p&gt;Random stuff I make.&lt;/p&gt;
 
-&lt;!-- TODO make data.json or something. change default layout to none --&gt;
-
 &lt;!-- TODO add descriptions --&gt;
 </description>
     </item>
@@ -288,6 +286,17 @@ playing violin and making random stuff (find some on the &lt;a href=&#34;https:/
 &lt;/style&gt;
 &lt;span class=&#34;obf&#34;&gt;&lt;span&gt;gmail.com&lt;/span&gt;&lt;span&gt;@&lt;/span&gt;&lt;span class=&#34;rtl&#34;&gt;82gnefelyk&lt;/span&gt;&lt;/span&gt;
 --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>https://kylefeng28.github.io/blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylefeng28.github.io/blog/</guid>
+      <description>&lt;p&gt;Nothing to see here now, move along.
+Perhaps you should check back later to see if there&amp;rsquo;s stuff?&lt;/p&gt;
 </description>
     </item>
     

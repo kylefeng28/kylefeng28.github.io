@@ -1,4 +1,9 @@
 programming
+  javascript
+    - activate-power-mode
+	- Box2DTest
+	- Morse code thing
 linguistics
 audio/visual (generative art / data visualization / live coding)
 emacs/vim
+  - typewriter-mode

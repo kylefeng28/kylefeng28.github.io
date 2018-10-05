@@ -2,12 +2,69 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kylefeng28</title>
-    <link>https://kylefeng28.github.io/</link>
+    <link>https://kylefeng28.github.io/index.xml</link>
     <description>Recent content on kylefeng28</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 20 Jul 2016 01:20:00 +0800</lastBuildDate>
+    <copyright>© 2015-18 Kyle Feng</copyright>
+    <lastBuildDate>Wed, 22 Feb 2017 17:29:30 -0500</lastBuildDate>
     <atom:link href="https://kylefeng28.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Includes in Hugo</title>
+      <link>https://kylefeng28.github.io/post/2017/02/22/includes-in-hugo/</link>
+      <pubDate>Wed, 22 Feb 2017 17:29:30 -0500</pubDate>
+      
+      <guid>https://kylefeng28.github.io/post/2017/02/22/includes-in-hugo/</guid>
+      <description>
+
+&lt;!--
+[Discussion](https://discuss.gohugo.io/t/create-an-home-page-whose-content-comes-from-partial-file-stored-in-the-content-folder/433/3)
+[Issue](https://github.com/spf13/hugo/issues/247)
+[SO answer](http://stackoverflow.com/a/39777029/5191980),
+[Source](https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_funcs.go)
+[Render content from another file in Markdown](https://github.com/jorinvo/hugo-shortcodes/blob/master/shortcodes/content.html)
+[Load data from JSONs and CSVs](https://gohugo.io/extras/dynamiccontent).
+--&gt;
+
+&lt;p&gt;While writing my &lt;a href=&#34;https://kylefeng28.github.io/a-child-who-couldnt-sleep/&#34;&gt;last post&lt;/a&gt;, I wanted to include some of the Haskell code I wrote from another file.
+Sure, I could just copy and paste, but that wouldn&amp;rsquo;t be very &lt;em&gt;DRY&lt;/em&gt;, would it?
+Jekyll had &lt;a href=&#34;https://jekyllrb.com/docs/includes/&#34;&gt;includes&lt;/a&gt;, so I assumed
+Hugo would have something that worked similarly.&lt;/p&gt;
+
+&lt;p&gt;Well, there was indeed a function called &lt;a href=&#34;https://gohugo.io/templates/functions/#readfile&#34;&gt;&lt;code&gt;readFile&lt;/code&gt;&lt;/a&gt;,
+but you would need to specify the entire path of the file, relative to the project working directory,
+not the base URL.
+For example, to include &lt;code&gt;/blog/my-post/hello.hs&lt;/code&gt;,
+you would need to write &lt;code&gt;{{&lt;/code&gt;&lt;code&gt;&amp;lt; readfile &amp;quot;/content/blog/my-post/hello.hs&amp;quot; &amp;gt;&lt;/code&gt;&lt;code&gt;}}&lt;/code&gt;, using the builtin shortcode.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s a little bit annoying to write, so I changed it a bit
+so that the path could be relative to the file it was called in:&lt;/p&gt;
+
+&lt;h5 id=&#34;include&#34;&gt;include&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;{{- delimit (slice &amp;quot;/content&amp;quot; .Page.URL (.Get 0)) &amp;quot;&amp;quot; | readFile -}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That way, you would only need to write &lt;code&gt;{{&lt;/code&gt;&lt;code&gt;&amp;lt; include &amp;quot;hello.hs&amp;quot; &amp;gt;&lt;/code&gt;&lt;code&gt;}}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Just for good measure, I made the following shortcodes that would
+read a file from the content or static directory, respectively.&lt;/p&gt;
+
+&lt;h5 id=&#34;includecontent&#34;&gt;includeContent&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;{{- delimit (slice &amp;quot;/content&amp;quot; (.Get 0 | relURL)) &amp;quot;&amp;quot; | readFile -}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;includestatic&#34;&gt;includeStatic&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;{{- delimit (slice &amp;quot;/static&amp;quot; (.Get 0 | relURL)) &amp;quot;&amp;quot; | readFile -}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Just for fun, I tried including a file within itself to see if that would work.
+The next thing I knew, I was looking at a &lt;a href=&#34;quine&#34;&gt;quine&lt;/a&gt;. Well, kind of.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Playground</title>
@@ -265,6 +322,24 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
     </item>
     
     <item>
+      <title></title>
+      <link>https://kylefeng28.github.io/post/1/01/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylefeng28.github.io/post/1/01/01/</guid>
+      <description>&lt;!doctype html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+	&lt;meta charset=&#34;utf-8&#34;&gt;
+	&lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</description>
+    </item>
+    
+    <item>
       <title>About Me</title>
       <link>https://kylefeng28.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -286,17 +361,6 @@ playing violin and making random stuff (find some on the &lt;a href=&#34;https:/
 &lt;/style&gt;
 &lt;span class=&#34;obf&#34;&gt;&lt;span&gt;gmail.com&lt;/span&gt;&lt;span&gt;@&lt;/span&gt;&lt;span class=&#34;rtl&#34;&gt;82gnefelyk&lt;/span&gt;&lt;/span&gt;
 --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Blog</title>
-      <link>https://kylefeng28.github.io/blog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kylefeng28.github.io/blog/</guid>
-      <description>&lt;p&gt;Nothing to see here now, move along.
-Perhaps you should check back later to see if there&amp;rsquo;s stuff?&lt;/p&gt;
 </description>
     </item>
     
@@ -360,17 +424,17 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 &lt;thead&gt;
   &lt;tr&gt;
 	&lt;td class=&#34;topleft&#34;&gt;&lt;br&gt;&lt;/td&gt;
-	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;1&#34; src=&#34;./s3_1.gif&#34;&gt;&lt;br&gt;Swaps - None&lt;/td&gt;
-	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;2&#34; src=&#34;./s3_2.gif&#34;&gt;&lt;br&gt;Swaps - Back&lt;/td&gt;
-	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;3&#34; src=&#34;./s3_3.gif&#34;&gt;&lt;br&gt;Swaps - Right&lt;/td&gt;
-	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;4&#34; src=&#34;./s3_4.gif&#34;&gt;&lt;br&gt;Swaps - Front&lt;/td&gt;
-	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;5&#34; src=&#34;./s3_5.gif&#34;&gt;&lt;br&gt;Swaps - Left&lt;/td&gt;
-	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;6&#34; src=&#34;./s3_6.gif&#34;&gt;&lt;br&gt;Swaps - Diagonal&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;1&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_1.gif&#34;&gt;&lt;br&gt;Swaps - None&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;2&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_2.gif&#34;&gt;&lt;br&gt;Swaps - Back&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;3&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_3.gif&#34;&gt;&lt;br&gt;Swaps - Right&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;4&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_4.gif&#34;&gt;&lt;br&gt;Swaps - Front&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;5&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_5.gif&#34;&gt;&lt;br&gt;Swaps - Left&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;6&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_6.gif&#34;&gt;&lt;br&gt;Swaps - Diagonal&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;A&#34; src=&#34;./s3_A.gif&#34;&gt;All Oriented&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;A&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_A.gif&#34;&gt;All Oriented&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;Solved!&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;(R&#39;UL&#39;) (U2RU&#39;) (R&#39;U2R2)&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;U(A1)&lt;/td&gt;
@@ -379,7 +443,7 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 	&lt;td class=&#34;cell&#34;&gt;(R&#39;UL&#39;) (U2RU&#39;) x&#39; (UL&#39;U2) (RU&#39;R) x&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;B&#34; src=&#34;./s3_B.gif&#34;&gt;Anti-Sune&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;B&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_B.gif&#34;&gt;Anti-Sune&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;RU2R&#39;U&#39;RU&#39;R&#39;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;R&#39;FU2F&#39;RFR&#39;U2RF&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(C4)&#39;&lt;br&gt;(C4)&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;R&#39;FRF&#39;U2F&#39;U2F&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(C2)&#39;&lt;br&gt;(C3)&lt;/span&gt;&lt;/td&gt;
@@ -388,7 +452,7 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 	&lt;td class=&#34;cell&#34;&gt;RU2R&#39;U&#39;RU&#39;BUB&#39;U&#39;R&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(C6)&#39;&lt;br&gt;(C6)&lt;/span&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;C&#34; src=&#34;./s3_C.gif&#34;&gt;Sune&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;C&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_C.gif&#34;&gt;Sune&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;RUR&#39;URU2R&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(B1)&#39;&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(B3)&#39;&lt;br&gt;(B4)&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(B4)&#39;&lt;br&gt;(B3)&lt;/span&gt;&lt;/td&gt;
@@ -397,7 +461,7 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(B6)&#39;&lt;br&gt;(B6)&lt;/span&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;D&#34; src=&#34;./s3_D.gif&#34;&gt;Bowtie/L&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;D&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_D.gif&#34;&gt;Bowtie/L&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;(R&#39;DR&#39;DR&#39;)U&lt;!----&gt;(R&#39;DR&#39;DR&#39;)&#39;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(D1)&#39;&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;R&#39;F2R&#39;U&#39;RF2R&#39;UR2&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(E5)&#39;&lt;br&gt;(D3)&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(E3)&#39;&lt;br&gt;(D2)&lt;/span&gt;&lt;/td&gt;
@@ -406,7 +470,7 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 	&lt;td class=&#34;cell&#34;&gt;RUR2F2rFR&#39;F2R&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(D6)&#39;&lt;/span&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;E&#34; src=&#34;./s3_E.gif&#34;&gt;Headlights/U&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;E&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_E.gif&#34;&gt;Headlights/U&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;R2F&#39;UFU&#39;F&#39;U&#39;F2RF&#39;R&lt;br&gt;&lt;br&gt;(F1)&#39;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;RU&#39;L&#39;UR&#39;U2B&#39;UBL&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(E2)&#39;&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(D3)&#39;&lt;br&gt;(E5)&lt;/span&gt;&lt;/td&gt;
@@ -415,7 +479,7 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 	&lt;td class=&#34;cell&#34;&gt;FRUR&#39;U&#39;F&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(E6)&#39;&lt;/span&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;F&#34; src=&#34;./s3_F.gif&#34;&gt;Chameleon/T&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;F&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_F.gif&#34;&gt;Chameleon/T&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(E1)&#39;&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;R&#39;UrU2R2FRF&#39;R&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(F2)&#39;&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(D5)&#39;&lt;br&gt;(F5)&lt;/span&gt;&lt;/td&gt;
@@ -424,7 +488,7 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 	&lt;td class=&#34;cell&#34;&gt;R&#39;URUBU2B&#39;RB&#39;R&#39;B&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(F6)&#39;&lt;/span&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;G&#34; src=&#34;./s3_G.gif&#34;&gt;Dead Guy/Pi/Bruno (Platypus)&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;G&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_G.gif&#34;&gt;Dead Guy/Pi/Bruno (Platypus)&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(E6)2&lt;br&gt;&lt;br&gt;(G1)&#39;&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;R&#39;F2RF&#39;U2RU&#39;L&#39;B&#39;U&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(G4)&#39;&lt;br&gt;(G4)&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;R&#39;FRUFU&#39;RUR&#39;U&#39;F&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(H2&#39;)H4&#39;&lt;/span&gt;&lt;/td&gt;
@@ -433,7 +497,7 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 	&lt;td class=&#34;cell&#34;&gt;R&#39;U&#39;RU&#39;R&#39;UF&#39;UFR&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(G6)&#39;&lt;/span&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;H&#34; src=&#34;./s3_H.gif&#34;&gt;Double Anti-Sune (Creeper)&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;H&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_H.gif&#34;&gt;Double Anti-Sune (Creeper)&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;(R&#39;FRUR&#39;)F(R&#39;FRUR&#39;)&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(H1)&#39;&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(G3)&#39;&lt;br&gt;(H2, H4)&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(G5)&#39;&lt;br&gt;(H3, H5)&lt;/span&gt;&lt;/td&gt;
@@ -542,6 +606,32 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 &lt;a href=&#34;http://lubixcube.com/CMLL.html&#34;&gt;CMLL (Lubix Cube)&lt;/a&gt;
 &lt;!--&lt;div&gt;--&gt;
 &lt;/center&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Quine</title>
+      <link>https://kylefeng28.github.io/quine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kylefeng28.github.io/quine/</guid>
+      <description>&lt;p&gt;Hello there! I am a quine! Well, not quite, actually. So you can call me the not-quite quine, I guess.&lt;/p&gt;
+
+&lt;p&gt;Well, without further ado, here is my source!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+title: Quine
+---
+
+Hello there! I am a quine! Well, not quite, actually. So you can call me the not-quite quine, I guess.
+
+Well, without further ado, here is my source!
+
+```
+{{&amp;lt; include &amp;#34;../quine.md&amp;#34; &amp;gt;}}
+```
+
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

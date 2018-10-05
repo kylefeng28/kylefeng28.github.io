@@ -6,7 +6,7 @@
 	<meta name="author" content="Kyle Feng"/>
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
-	<meta name="generator" content="Hugo 0.16" />
+	<meta name="generator" content="Hugo 0.18.1" />
 
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -21,16 +21,18 @@
 	
 
 	
-	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"/>
 	
 
 	
-	<link rel="stylesheet" href="/css/normalize.css">
-	<link rel="stylesheet" href="/css/skeleton.css">
-	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/normalize.css"/>
+	<link rel="stylesheet" href="/css/skeleton.css"/>
+	<link rel="stylesheet" href="/css/main.css"/>
+	
+	
+	<link rel="stylesheet" href="/vendor/highlight/styles/tomorrow.css"/>
 </head>
 <body>
-
 
 <div class="container">
 <header class="header">
@@ -40,7 +42,11 @@
 			
 <li class="navbar-item"><a href=/about>About</a></li>
 
+<li class="navbar-item"><a href=/post>Blog</a></li>
+
 <li class="navbar-item"><a href=/playground>Playground</a></li>
+
+<li class="navbar-item"><a href=https://github.com/kylefeng28>GitHub</a></li>
 
 
 		</ul>
@@ -48,11 +54,14 @@
 </header>
 </div>
 
+
 <div class="container">
-<main class="content">
+<article class="content">
   <div class="post">
-    <h3 class="title">About Me</h3>
-	
+		<a href="/about/">
+			<h3 class="article-title">About Me</h3>
+		</a>
+		<time class="article-date" datetime='0001-01-01T00:00:00.000&#43;00:00' itemprop="datePublished">Mon, Jan 1, 0001</time>
     <p>Hello! I&rsquo;m Kyle, a computer science major at the University of North Carolina at Chapel Hill.
 I&rsquo;m interested in using technology to better people&rsquo;s lives, especially in the field of accessibility.
 On this site, I&rsquo;ll share things that I learn and things that I make on my <a href="/blog">Blog</a>.
@@ -70,13 +79,24 @@ playing violin and making random stuff (find some on the <a href="/playground">P
 <span class="obf"><span>gmail.com</span><span>@</span><span class="rtl">82gnefelyk</span></span>
 -->
 
-	
-
-
-
-
+		
   </div>
-</main>
+	<nav id="article-nav">
+	
+	<a href="/post/1/01/01/" id="article-nav-newer" class="article-nav-link-wrap">
+		<div class="article-nav-title"><span>←</span>&nbsp;
+			
+		</div>
+	</a>
+	
+	
+	<a href="/cmll/" id="article-nav-older" class="article-nav-link-wrap">
+		<div class="article-nav-title">CMLL Algorithms&nbsp;<span>→</span></div>
+	</a>
+	
+</nav>
+
+</article>
 </div>
 
 
@@ -93,9 +113,12 @@ ga('send', 'pageview');
 
 <div class="container">
 <footer>
-	<p class="copy">© 2015-17 Kyle Feng</p>
+	<p class="copy">© 2015-18 Kyle Feng</p>
 </footer>
 </div>
+
+
+
 
 </body>
 </html>

@@ -2,10 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Speedcubing on kylefeng28</title>
-    <link>https://kylefeng28.github.io/tags/speedcubing/</link>
+    <link>https://kylefeng28.github.io/tags/speedcubing/index.xml</link>
     <description>Recent content in Speedcubing on kylefeng28</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
+    <copyright>© 2015-18 Kyle Feng</copyright>
     <atom:link href="https://kylefeng28.github.io/tags/speedcubing/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -68,17 +69,17 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 &lt;thead&gt;
   &lt;tr&gt;
 	&lt;td class=&#34;topleft&#34;&gt;&lt;br&gt;&lt;/td&gt;
-	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;1&#34; src=&#34;./s3_1.gif&#34;&gt;&lt;br&gt;Swaps - None&lt;/td&gt;
-	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;2&#34; src=&#34;./s3_2.gif&#34;&gt;&lt;br&gt;Swaps - Back&lt;/td&gt;
-	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;3&#34; src=&#34;./s3_3.gif&#34;&gt;&lt;br&gt;Swaps - Right&lt;/td&gt;
-	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;4&#34; src=&#34;./s3_4.gif&#34;&gt;&lt;br&gt;Swaps - Front&lt;/td&gt;
-	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;5&#34; src=&#34;./s3_5.gif&#34;&gt;&lt;br&gt;Swaps - Left&lt;/td&gt;
-	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;6&#34; src=&#34;./s3_6.gif&#34;&gt;&lt;br&gt;Swaps - Diagonal&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;1&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_1.gif&#34;&gt;&lt;br&gt;Swaps - None&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;2&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_2.gif&#34;&gt;&lt;br&gt;Swaps - Back&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;3&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_3.gif&#34;&gt;&lt;br&gt;Swaps - Right&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;4&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_4.gif&#34;&gt;&lt;br&gt;Swaps - Front&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;5&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_5.gif&#34;&gt;&lt;br&gt;Swaps - Left&lt;/td&gt;
+	&lt;td class=&#34;top heading&#34;&gt;&lt;img alt=&#34;6&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_6.gif&#34;&gt;&lt;br&gt;Swaps - Diagonal&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;A&#34; src=&#34;./s3_A.gif&#34;&gt;All Oriented&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;A&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_A.gif&#34;&gt;All Oriented&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;Solved!&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;(R&#39;UL&#39;) (U2RU&#39;) (R&#39;U2R2)&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;U(A1)&lt;/td&gt;
@@ -87,7 +88,7 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 	&lt;td class=&#34;cell&#34;&gt;(R&#39;UL&#39;) (U2RU&#39;) x&#39; (UL&#39;U2) (RU&#39;R) x&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;B&#34; src=&#34;./s3_B.gif&#34;&gt;Anti-Sune&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;B&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_B.gif&#34;&gt;Anti-Sune&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;RU2R&#39;U&#39;RU&#39;R&#39;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;R&#39;FU2F&#39;RFR&#39;U2RF&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(C4)&#39;&lt;br&gt;(C4)&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;R&#39;FRF&#39;U2F&#39;U2F&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(C2)&#39;&lt;br&gt;(C3)&lt;/span&gt;&lt;/td&gt;
@@ -96,7 +97,7 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 	&lt;td class=&#34;cell&#34;&gt;RU2R&#39;U&#39;RU&#39;BUB&#39;U&#39;R&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(C6)&#39;&lt;br&gt;(C6)&lt;/span&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;C&#34; src=&#34;./s3_C.gif&#34;&gt;Sune&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;C&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_C.gif&#34;&gt;Sune&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;RUR&#39;URU2R&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(B1)&#39;&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(B3)&#39;&lt;br&gt;(B4)&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(B4)&#39;&lt;br&gt;(B3)&lt;/span&gt;&lt;/td&gt;
@@ -105,7 +106,7 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(B6)&#39;&lt;br&gt;(B6)&lt;/span&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;D&#34; src=&#34;./s3_D.gif&#34;&gt;Bowtie/L&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;D&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_D.gif&#34;&gt;Bowtie/L&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;(R&#39;DR&#39;DR&#39;)U&lt;!----&gt;(R&#39;DR&#39;DR&#39;)&#39;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(D1)&#39;&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;R&#39;F2R&#39;U&#39;RF2R&#39;UR2&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(E5)&#39;&lt;br&gt;(D3)&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(E3)&#39;&lt;br&gt;(D2)&lt;/span&gt;&lt;/td&gt;
@@ -114,7 +115,7 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 	&lt;td class=&#34;cell&#34;&gt;RUR2F2rFR&#39;F2R&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(D6)&#39;&lt;/span&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;E&#34; src=&#34;./s3_E.gif&#34;&gt;Headlights/U&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;E&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_E.gif&#34;&gt;Headlights/U&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;R2F&#39;UFU&#39;F&#39;U&#39;F2RF&#39;R&lt;br&gt;&lt;br&gt;(F1)&#39;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;RU&#39;L&#39;UR&#39;U2B&#39;UBL&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(E2)&#39;&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(D3)&#39;&lt;br&gt;(E5)&lt;/span&gt;&lt;/td&gt;
@@ -123,7 +124,7 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 	&lt;td class=&#34;cell&#34;&gt;FRUR&#39;U&#39;F&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(E6)&#39;&lt;/span&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;F&#34; src=&#34;./s3_F.gif&#34;&gt;Chameleon/T&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;F&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_F.gif&#34;&gt;Chameleon/T&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(E1)&#39;&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;R&#39;UrU2R2FRF&#39;R&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(F2)&#39;&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(D5)&#39;&lt;br&gt;(F5)&lt;/span&gt;&lt;/td&gt;
@@ -132,7 +133,7 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 	&lt;td class=&#34;cell&#34;&gt;R&#39;URUBU2B&#39;RB&#39;R&#39;B&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(F6)&#39;&lt;/span&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;G&#34; src=&#34;./s3_G.gif&#34;&gt;Dead Guy/Pi/Bruno (Platypus)&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;G&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_G.gif&#34;&gt;Dead Guy/Pi/Bruno (Platypus)&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(E6)2&lt;br&gt;&lt;br&gt;(G1)&#39;&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;R&#39;F2RF&#39;U2RU&#39;L&#39;B&#39;U&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(G4)&#39;&lt;br&gt;(G4)&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;R&#39;FRUFU&#39;RUR&#39;U&#39;F&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(H2&#39;)H4&#39;&lt;/span&gt;&lt;/td&gt;
@@ -141,7 +142,7 @@ Aim for about 2 second execution on average, how you recognize the cases is comp
 	&lt;td class=&#34;cell&#34;&gt;R&#39;U&#39;RU&#39;R&#39;UF&#39;UFR&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(G6)&#39;&lt;/span&gt;&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;H&#34; src=&#34;./s3_H.gif&#34;&gt;Double Anti-Sune (Creeper)&lt;/td&gt;
+	&lt;td class=&#34;left heading&#34;&gt;&lt;img alt=&#34;H&#34; src=&#34;https://kylefeng28.github.io/cmll/s3_H.gif&#34;&gt;Double Anti-Sune (Creeper)&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;(R&#39;FRUR&#39;)F(R&#39;FRUR&#39;)&#39;&lt;br&gt;&lt;br&gt;&lt;span class=&#34;alt&#34;&gt;(H1)&#39;&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(G3)&#39;&lt;br&gt;(H2, H4)&lt;/span&gt;&lt;/td&gt;
 	&lt;td class=&#34;cell&#34;&gt;&lt;span class=&#34;alt&#34;&gt;(G5)&#39;&lt;br&gt;(H3, H5)&lt;/span&gt;&lt;/td&gt;

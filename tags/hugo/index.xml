@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on kylefeng28</title>
+    <link>https://kylefeng28.github.io/tags/hugo/index.xml</link>
+    <description>Recent content in Hugo on kylefeng28</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>© 2015-18 Kyle Feng</copyright>
+    <atom:link href="https://kylefeng28.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Includes in Hugo</title>
+      <link>https://kylefeng28.github.io/post/2017/02/22/includes-in-hugo/</link>
+      <pubDate>Wed, 22 Feb 2017 17:29:30 -0500</pubDate>
+      
+      <guid>https://kylefeng28.github.io/post/2017/02/22/includes-in-hugo/</guid>
+      <description>
+
+&lt;!--
+[Discussion](https://discuss.gohugo.io/t/create-an-home-page-whose-content-comes-from-partial-file-stored-in-the-content-folder/433/3)
+[Issue](https://github.com/spf13/hugo/issues/247)
+[SO answer](http://stackoverflow.com/a/39777029/5191980),
+[Source](https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_funcs.go)
+[Render content from another file in Markdown](https://github.com/jorinvo/hugo-shortcodes/blob/master/shortcodes/content.html)
+[Load data from JSONs and CSVs](https://gohugo.io/extras/dynamiccontent).
+--&gt;
+
+&lt;p&gt;While writing my &lt;a href=&#34;https://kylefeng28.github.io/a-child-who-couldnt-sleep/&#34;&gt;last post&lt;/a&gt;, I wanted to include some of the Haskell code I wrote from another file.
+Sure, I could just copy and paste, but that wouldn&amp;rsquo;t be very &lt;em&gt;DRY&lt;/em&gt;, would it?
+Jekyll had &lt;a href=&#34;https://jekyllrb.com/docs/includes/&#34;&gt;includes&lt;/a&gt;, so I assumed
+Hugo would have something that worked similarly.&lt;/p&gt;
+
+&lt;p&gt;Well, there was indeed a function called &lt;a href=&#34;https://gohugo.io/templates/functions/#readfile&#34;&gt;&lt;code&gt;readFile&lt;/code&gt;&lt;/a&gt;,
+but you would need to specify the entire path of the file, relative to the project working directory,
+not the base URL.
+For example, to include &lt;code&gt;/blog/my-post/hello.hs&lt;/code&gt;,
+you would need to write &lt;code&gt;{{&lt;/code&gt;&lt;code&gt;&amp;lt; readfile &amp;quot;/content/blog/my-post/hello.hs&amp;quot; &amp;gt;&lt;/code&gt;&lt;code&gt;}}&lt;/code&gt;, using the builtin shortcode.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s a little bit annoying to write, so I changed it a bit
+so that the path could be relative to the file it was called in:&lt;/p&gt;
+
+&lt;h5 id=&#34;include&#34;&gt;include&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;{{- delimit (slice &amp;quot;/content&amp;quot; .Page.URL (.Get 0)) &amp;quot;&amp;quot; | readFile -}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That way, you would only need to write &lt;code&gt;{{&lt;/code&gt;&lt;code&gt;&amp;lt; include &amp;quot;hello.hs&amp;quot; &amp;gt;&lt;/code&gt;&lt;code&gt;}}&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Just for good measure, I made the following shortcodes that would
+read a file from the content or static directory, respectively.&lt;/p&gt;
+
+&lt;h5 id=&#34;includecontent&#34;&gt;includeContent&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;{{- delimit (slice &amp;quot;/content&amp;quot; (.Get 0 | relURL)) &amp;quot;&amp;quot; | readFile -}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;includestatic&#34;&gt;includeStatic&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;{{- delimit (slice &amp;quot;/static&amp;quot; (.Get 0 | relURL)) &amp;quot;&amp;quot; | readFile -}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Just for fun, I tried including a file within itself to see if that would work.
+The next thing I knew, I was looking at a &lt;a href=&#34;quine&#34;&gt;quine&lt;/a&gt;. Well, kind of.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

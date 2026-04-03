@@ -1,14 +1,14 @@
 {{ define "main" }}
 <section class="max-w-3xl mx-auto px-6 pt-16 pb-12">
-  <h1 class="text-3xl font-bold text-zinc-100 mb-8">{{ .Title }}</h1>
-  {{ with .Content }}<div class="prose prose-invert prose-emerald max-w-none prose-p:text-zinc-300 prose-a:text-emerald-400 mb-10">{{ . }}</div>{{ end }}
+  <h1 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-8">{{ .Title }}</h1>
+  {{ with .Content }}<div class="prose prose-zinc dark:prose-invert prose-emerald max-w-none prose-a:text-emerald-600 dark:prose-a:text-emerald-400 mb-10">{{ . }}</div>{{ end }}
   {{ $pages := .Pages }}
   {{ if $pages }}
   <ul class="space-y-4">
     {{ range $pages }}
     <li class="flex justify-between items-baseline gap-4">
-      <a href="{{ .RelPermalink }}" class="hover:text-emerald-400 transition-colors">{{ .Title }}</a>
-      {{ with .Date }}<time class="text-sm text-zinc-500 shrink-0">{{ .Format "Jan 2, 2006" }}</time>{{ end }}
+      <a href="{{ .RelPermalink }}" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">{{ .Title }}</a>
+      {{ with .Date }}<time class="text-sm text-zinc-400 dark:text-zinc-500 shrink-0">{{ .Format "Jan 2, 2006" }}</time>{{ end }}
     </li>
     {{ end }}
   </ul>

@@ -5,9 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
@@ -18,12 +24,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body class="bg-zinc-950 text-zinc-300 font-sans antialiased">
+<body class="bg-white text-zinc-700 dark:bg-zinc-950 dark:text-zinc-300 font-sans antialiased transition-colors">
   {{ partial "nav.html" . }}
   <main>
     {{ block "main" . }}{{ end }}
   </main>
-  <footer class="border-t border-zinc-800 mt-24 py-8 text-center text-sm text-zinc-500">
+  <footer class="border-t border-zinc-200 dark:border-zinc-800 mt-24 py-8 text-center text-sm text-zinc-400 dark:text-zinc-500">
     <p>&copy; {{ now.Year }} Kyle Feng</p>
   </footer>
 </body>

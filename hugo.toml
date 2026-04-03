@@ -1,0 +1,13 @@
+baseURL = 'https://kylefeng28.github.io/'
+languageCode = 'en-us'
+title = 'Kyle Feng'
+
+[params]
+  description = "Software developer"
+  github = "https://github.com/kylefeng28"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  style = "dracula"

@@ -2,7 +2,9 @@
 <article class="max-w-3xl mx-auto px-6 pt-16 pb-12">
   <h1 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-4">{{ .Title }}</h1>
   {{ with .Params.profile }}
-    <img src="{{ . }}" class="w-64 h-64 rounded-lg object-cover mb-6">
+    <div class="w-64 h-64 rounded-lg overflow-hidden shrink-0">
+      <img src="{{ . }}" class="w-full h-full object-cover scale-125">
+    </div>
   {{ end }}
   {{ with .Date }}<time class="text-sm text-zinc-400 dark:text-zinc-500">{{ .Format "January 2, 2006" }}</time>{{ end }}
   <div class="mt-8 prose prose-zinc dark:prose-invert prose-emerald max-w-none

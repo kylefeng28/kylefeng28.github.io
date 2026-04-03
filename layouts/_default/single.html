@@ -1,0 +1,11 @@
+{{ define "main" }}
+<article class="max-w-3xl mx-auto px-6 pt-16 pb-12">
+  <h1 class="text-3xl font-bold text-zinc-100 mb-4">{{ .Title }}</h1>
+  {{ with .Date }}<time class="text-sm text-zinc-500">{{ .Format "January 2, 2006" }}</time>{{ end }}
+  <div class="mt-8 prose prose-invert prose-emerald max-w-none
+    prose-headings:text-zinc-100 prose-p:text-zinc-300 prose-a:text-emerald-400
+    prose-code:text-emerald-300 prose-pre:bg-zinc-900 prose-pre:border prose-pre:border-zinc-800">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
